@@ -11,7 +11,7 @@ import numpy as np
 cap = cv2.VideoCapture("M:/College CSVTU,UTD/3.Get Together2023/Cameraman (Video)/01.mp4")  # For Video
 
 
-model = YOLO("../Yolo-Weights/yolov8l.pt")
+model = YOLO("../Yolo-Weights/yolov8n.pt")
 
 classNames = ["person", "bicycle", "car", "motorbike", "aeroplane", "bus", "train", "truck", "boat",
               "traffic light", "fire hydrant", "stop sign", "parking meter", "bench", "bird", "cat",
