@@ -8,7 +8,7 @@ import numpy as np
 # cap = cv2.VideoCapture(0)  # For Webcam
 # cap.set(3, 1280)
 # cap.set(4, 720)
-cap = cv2.VideoCapture("M:/College CSVTU,UTD/3.Get Together2023/Cameraman (Video)/01.mp4")  # For Video
+cap = cv2.VideoCapture("Videos/bikes.mp4")  # For Video
 
 
 model = YOLO("../Yolo-Weights/yolov8n.pt")
