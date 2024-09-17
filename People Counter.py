@@ -3,12 +3,13 @@ import cv2
 import cvzone
 import math
 import time
+import torch
 import numpy as np
 
-# cap = cv2.VideoCapture(0)  # For Webcam
-# cap.set(3, 1280)
-# cap.set(4, 720)
-cap = cv2.VideoCapture("Videos/bikes.mp4")  # For Video
+cap = cv2.VideoCapture(0)  # For Webcam
+cap.set(3, 1280)
+cap.set(4, 720)
+# cap = cv2.VideoCapture("Videos/bikes.mp4")  # For Video
 
 
 model = YOLO("Yolo-Weights/yolov8l.pt")
@@ -71,6 +72,7 @@ while True:
         col=(0,0,255)
 
 
+
     # Display the number of people detected in the current frame
     cv2.putText(img, f'Person Count: {person_count}', (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (col), 2)
     #cv2.rectangle(img,(50,50),(200,200),col,-1)
@@ -78,5 +80,6 @@ while True:
     prev_frame_time = new_frame_time
     print(fps)
 
+
     cv2.imshow("Image", img)
-    cv2.waitKey(1)
+    cv2.waitKey(1) 
