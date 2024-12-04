@@ -1,6 +1,6 @@
 # Metro Crowd Indicator
 
-![Metro Crowd Indicator](Demo/Metro Coach Color change GIF.gif)
+![Metro Crowd Indicator](Demo/Metro_Coach_Color_change_GIF.gif)
 
 **What if we know crowd status of each coach of upcoming metro in advance?**
 
