@@ -1,67 +1,72 @@
-Here’s a draft for a README file for your Metro Crowd Indicator project:
+# Metro Crowd Indicator
 
-Metro Crowd Indicator
+The **Metro Crowd Indicator** is an AI-powered application that uses YOLOv8 object detection to monitor and count the number of people in a metro coach in real time. This helps evaluate crowd density and provides a visual indication of occupancy levels, which can enhance passenger convenience and system efficiency.
 
-The Metro Crowd Indicator is a real-time monitoring system designed to address crowd density issues in metro trains and stations. It enhances passenger experience, ensures safety, and improves the efficiency of urban transportation systems.
+## Features
 
-Why This Project?
+- **Real-Time Detection**: Utilizes YOLOv8 to detect individuals in video feeds with high accuracy and speed.
+- **Crowd Density Visualization**: Displays a bounding box and a label for each detected person on the video feed.
+- **Dynamic Indicators**: Assigns colors based on crowd density:
+  - **Blue**: Low occupancy (≤ 5 people)
+  - **Green**: Moderate occupancy (6–10 people)
+  - **Red**: High occupancy (> 10 people)
+- **Multicoach Support**: Can handle video feeds from multiple cameras monitoring different coaches.
 
-Urban metro systems are often overcrowded, especially during peak hours. This project aims to:
-	1.	Address Overcrowding Issues:
-	•	Improve passenger safety by managing crowded platforms and compartments.
-	•	Reduce operational challenges such as delays and infrastructure wear.
-	2.	Enhance Passenger Experience:
-	•	Provide real-time crowd information for informed decision-making.
-	•	Balance passenger distribution for a more comfortable journey.
-	•	Minimize waiting times with up-to-date travel insights.
+## Requirements
 
-How It Works
+- Python 3.7 or higher
+- The following Python libraries:
+  - `ultralytics`
+  - `cv2` (OpenCV)
+  - `cvzone`
+  - `torch`
+  - `numpy`
+  - `math`
+  - `time`
+  - `os`
 
-Sensors and Cameras
+## Installation
 
-	•	Sensors and Cameras: Measure crowd density using real-time occupancy data.
-	•	Weight Sensors: Monitor train compartment loads.
-Visual Alerts
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/metro-crowd-indicator.git
+   cd metro-crowd-indicator
+2. Install the required Python libraries:
+   ```bash
+   pip install ultralytics opencv-python cvzone torch numpy
+3. Download the YOLOv8 weights file (yolov8l.pt) and place it in the Yolo-Weights/ directory. You can download the weights from YOLOv8 GitHub repository.
 
-	•	LED Displays: Show crowd density levels with color-coded indicators:
-	•	Green: Low density (safe).
-	•	Yellow: Moderate density (manageable).
-	•	Red: High density (avoid if possible).
+## Usage
 
-YOLO Integration
+1. Ensure your webcam or other video input device is connected and accessible.
+2. Run the script
+   ```bash
+   python metro_crowd_indicator.py
+3. Use the q key to exit the application.
 
-This system uses the YOLO (You Only Look Once) object detection framework for:
-	1.	Real-Time Detection:
-	•	Identify and count passengers.
-	•	Estimate crowd density for platforms and train compartments.
-	2.	Coach Load Balancing:
-	•	Detect occupancy levels in coaches and guide passengers to less crowded ones.
+## Customization
+- Adding More Coaches: Modify the for loop to dynamically add more camera inputs:
+   ```bash
+   for i in range(num_of_coaches):
+    globals()[f"coach{i}"] = coach(camera_index)
+Replace num_of_coaches with the desired number of camera feeds and camera_index with the respective indices for the video devices.
+- Adjusting Detection Threshold: Update the confidence threshold in the classloop method:
+   ```bash
+   if currentClass == "person" and conf > 0.3:
+Increase or decrease the 0.3 value to change the sensitivity.
 
-Required Python Libraries
+##How It Works
+1. **Video Capture:** The application reads video frames from the specified camera index using OpenCV.
+2. **Object Detection:** YOLOv8 detects objects in the frames and filters detections to count only person objects.
+3. **Crowd Analysis:**
+	- Calculates the number of detected people.
+	- Displays color-coded density indicators (blue, green, red) based on thresholds.
+4. **Visualization:** Annotates the video feed with bounding boxes, class labels, and crowd density.
 
-To develop this system, install the following libraries:
-	•	YOLO Framework: ultralytics for YOLOv5 or YOLOv8.
-	•	Computer Vision: OpenCV for video feed handling.
-	•	Data Processing: NumPy for numerical computations.
-	•	Visualization:
-	•	Matplotlib for plotting crowd density trends.
-	•	Dash or Streamlit for live dashboards.
-Future Upgrades
 
-	1.	Smart App Integration:
-	•	Deliver personalized crowd updates via mobile apps.
-	2.	Multi-Class Detection:
-	•	Detect specific groups like children or elderly for enhanced accessibility.
-	3.	Enhanced Safety Features:
-	•	Behavioral anomaly detection (e.g., unattended baggage).
-	•	Emergency management systems for safe evacuations.
 
-Contribution
 
-We welcome contributions to improve the Metro Crowd Indicator. Feel free to fork this repository, make your changes, and submit a pull request.
 
-License
 
-This project is licensed under [Your Chosen License].
 
-Feel free to suggest further details or sections you’d like included!
+   
