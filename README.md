@@ -49,9 +49,14 @@
    cd metro-crowd-indicator
 2. Install the required Python libraries:
    ```bash
-   pip install ultralytics opencv-python cvzone torch numpy
+   pip install ultralytics opencv-python cvzone numpy
 3. Download the YOLOv8 weights file (yolov8l.pt) and place it in the Yolo-Weights/ directory. You can download the weights from YOLOv8 GitHub repository.
 
+
+4. For GPU Acceleration Install Pytorch wchich is Compatible with your CUDA Version from [Pytorch Official Website](https://pytorch.org/get-started/locally/)
+    ```bash
+    pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
+  
 ## Usage
 
 1. Ensure your webcam or other video input device is connected and accessible.
@@ -70,14 +75,6 @@ Replace num_of_coaches with the desired number of camera feeds and camera_index 
    ```bash
    if currentClass == "person" and conf > 0.3:
 Increase or decrease the 0.3 value to change the sensitivity.
-
-##How It Works
-1. **Video Capture:** The application reads video frames from the specified camera index using OpenCV.
-2. **Object Detection:** YOLOv8 detects objects in the frames and filters detections to count only person objects.
-3. **Crowd Analysis:**
-	- Calculates the number of detected people.
-	- Displays color-coded density indicators (blue, green, red) based on thresholds.
-4. **Visualization:** Annotates the video feed with bounding boxes, class labels, and crowd density.
 
 
 
