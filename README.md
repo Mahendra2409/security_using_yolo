@@ -73,7 +73,7 @@
 Replace num_of_coaches with the desired number of camera feeds and camera_index with the respective indices for the video devices.
 - Adjusting Detection Threshold: Update the confidence threshold in the classloop method:
    ```bash
-   if currentClass == "person" and conf > 0.3:
+   if currentClass == "person" and conf > 0.3:  
 Increase or decrease the 0.3 value to change the sensitivity.
 
 
