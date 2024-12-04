@@ -1,8 +1,19 @@
 # Metro Crowd Indicator
 
-![Metro Crowd Indicator Demo](/Demo/Metro Coach Color change GIF.gif)
+![Metro Crowd Indicator](Demo/Metro Coach Color change GIF.gif)
 
-The **Metro Crowd Indicator** is an AI-powered application that uses YOLOv8 object detection to monitor and count the number of people in a metro coach in real time. This helps evaluate crowd density and provides a visual indication of occupancy levels, which can enhance passenger convenience and system efficiency.
+**What if we know crowd status of each coach of upcoming metro in advance?**
+
+- This Metro Crowd Indicator will be able to show Crowd level of each coach of upcoming metro at metro stations.
+- So that people know where they should wait for less crowded coaches or Skip for next upcoming Metro.
+- It update crowd status at every Station.
+
+**What about Security at metros and metro Stations?**
+- I also added security features.
+- It can detect harmull objects like:`Gun` ,`Knife`, `Fire` 
+- Dangerous Action: `Fighting`, `Fallout`
+- And Send **ALERT** Message to Metro Security department.
+- **ALERT MESSAGE** : It contains what found on CCTV footage and that clip in wchich it was found.
 
 ## Features
 
@@ -26,7 +37,10 @@ The **Metro Crowd Indicator** is an AI-powered application that uses YOLOv8 obje
   - `math`
   - `time`
   - `os`
-
+  - For GPU Acceleration Install Pytorch wchich is Compatible with your CUDA Version from [Pytorch Official Website](https://pytorch.org/get-started/locally/)
+  ```bash
+    pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
+  
 ## Installation
 
 1. Clone the repository:
