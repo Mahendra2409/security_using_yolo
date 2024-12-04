@@ -1,5 +1,7 @@
 # Metro Crowd Indicator
 
+![Metro Crowd Indicator Demo](Demo/Metro Coach Color change GIF.gif)
+
 The **Metro Crowd Indicator** is an AI-powered application that uses YOLOv8 object detection to monitor and count the number of people in a metro coach in real time. This helps evaluate crowd density and provides a visual indication of occupancy levels, which can enhance passenger convenience and system efficiency.
 
 ## Features
