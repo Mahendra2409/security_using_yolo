@@ -57,7 +57,7 @@
 1. Ensure your webcam or other video input device is connected and accessible.
 2. Run the script
    ```bash
-   python metro_crowd_indicator.py 
+   python metro_crowd_indicator.py  
 3. Use the q key to exit the application.
 
 ## Customization
