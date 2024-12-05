@@ -47,7 +47,7 @@ with mp_hands.Hands(
 
 # For webcam input:
 # cap = cv2.VideoCapture(0)
-cap = cv2.VideoCapture("Videos/a2.jpg")  # For Video
+cap = cv2.VideoCapture("../Videos/a2.jpg")  # For Video
 with mp_hands.Hands(
     model_complexity=0,
     min_detection_confidence=0.5,
