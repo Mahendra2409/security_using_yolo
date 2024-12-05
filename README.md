@@ -13,7 +13,7 @@
 - It can detect harmull objects like:`Gun` ,`Knife`, `Fire` 
 - Dangerous Action: `Fighting`, `Fallout`
 - And Send **ALERT** Message to Metro Security department.
-- **ALERT MESSAGE** : It contains what found on CCTV footage and that clip in wchich it was found.
+- **⚠️ALERT MESSAGE** : It contains what found on CCTV footage and that clip in wchich it was found.
 
 ## Features
 
